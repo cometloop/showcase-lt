@@ -7,10 +7,13 @@
 - If we encounter an error calling the api, we show an error toast.
 - If no photos match the search criteria, we show 'No results found'
 - I committed .env files on purpose for ease of use for the showcase. Normally they would not be committed.
+- e2e tests
+  - I added a couple sample tests using playwright.
+  - They hit the real backend in this showcase (normally I would not hit real apis when writing tests).
 
 ## Tech stack
 
-- Front end - React typescript app created with create-react-app for speed.
+- Front end - React typescript app created with create-react-app.
 - Back end - Node express app that acts only as a proxy server to get around the CORS issue with the enpodint provided.
 - e2e tests: Playwright
 
