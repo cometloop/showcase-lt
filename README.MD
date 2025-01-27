@@ -6,7 +6,7 @@
 - The filtered list of photos is shown when the query matches against photo titles.
 - If we encounter an error calling the api, we show an error toast.
 - If no photos match the search criteria, we show 'No results found'
-- I committed .env files on purpose for each of use for the showcase. Normally they would not be committed.
+- I committed .env files on purpose for ease of use for the showcase. Normally they would not be committed.
 
 ## Tech stack
 
