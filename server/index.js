@@ -1,23 +1,25 @@
+require('dotenv').config(); // Load environment variables
+
 const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 var cors = require('cors')
 
 const app = express();
-const PORT = 3001; // Your proxy server port
-const TARGET_SERVER = 'https://showcase.leantechniques.com'; // Target server URL
+const PORT = 3001; 
+const API_BASE_URL = process.env.API_BASE_URL;
+const API_KEY = process.env.API_KEY;
+const API_SECRET = process.env.API_SECRET;
 
 app.use(cors())
 
-// Proxy middleware
 app.use(
-	'', // Proxy requests starting with `/api`
+	'',
 	createProxyMiddleware({
-		target: TARGET_SERVER,
-		changeOrigin: true, // Adjust the `Host` header to match the target
+		target: API_BASE_URL,
+		changeOrigin: true,
 		headers: {
-			lt_api_key:'lt_tech_showcase'
+			[API_KEY]: [API_SECRET]
 		}
-		// pathRewrite: { '^/api': '' }, // Remove `/api` prefix if needed
 	})
 );
 
